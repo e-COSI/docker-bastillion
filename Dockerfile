@@ -3,10 +3,11 @@ FROM openjdk:8-slim
 LABEL maintainer="e-COSI <tech@e-cosi.com>"
 
 ARG BASTILLION_VERSION
+ARG BASTILLION_FILENAME_VERSION
 ARG DOCKERIZE_VERSION
 
 ENV BASTILLION_VERSION=${BASTILLION_VERSION} \
-    BASTILLION_FILENAME=${BASTILLION_VERSION} \
+    BASTILLION_FILENAME=${BASTILLION_FILENAME_VERSION} \
     DOCKERIZE_VERSION=${DOCKERIZE_VERSION}
 
 RUN apt-get update && apt-get -y install wget && \
@@ -20,7 +21,7 @@ RUN apt-get update && apt-get -y install wget && \
     # create db directory for later permission update
     mkdir /opt/bastillion/jetty/bastillion/WEB-INF/classes/keydb && \
     # remove default config - will be written by dockerize on startup
-    rm /opt/bastillion/jetty/bastillion/WEB-INF/classes/BastillionConfig.properties && \
+    rm /opt/bastillion/jetty/bastillion/WEB-INF/classes/BastillionConfig.properties
     
     # correct permission for running as non-root (f.e. on OpenShift)
     #chgrp -R 0 /opt/bastillion && \

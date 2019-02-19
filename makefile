@@ -30,12 +30,14 @@ help: ## This help.
 build: ## Build the container
 	docker build \
 		--build-arg BASTILLION_VERSION=$(VERSION) \
+		--build-arg BASTILLION_FILENAME_VERSION=$(BASTILLION_FILENAME_VERSION) \
 		--build-arg DOCKERIZE_VERSION=$(DOCKERIZE_VERSION) \
 		--rm -t $(APP_NAME):$(VERSION) .
 
 build-nc: ## Build the container without caching
 	docker build \
 		--build-arg BASTILLION_VERSION=$(VERSION) \
+		--build-arg BASTILLION_FILENAME_VERSION=$(BASTILLION_FILENAME_VERSION) \
 		--build-arg DOCKERIZE_VERSION=$(DOCKERIZE_VERSION) \
 		--no-cache --rm -t $(APP_NAME):$(VERSION) .
 
