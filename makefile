@@ -68,11 +68,11 @@ tag: tag-latest tag-version ## Generate container tags for the `{version}` ans `
 
 tag-latest: ## Generate container `latest` tag
 	@echo 'create tag latest'
-	docker tag $(APP_NAME) $(DOCKER_REPO)/$(APP_NAME):latest
+	docker tag $(APP_NAME):$(VERSION) $(DOCKER_REPO)/$(APP_NAME):latest
 
 tag-version: ## Generate container `{version}` tag
 	@echo 'create tag $(VERSION)'
-	docker tag $(APP_NAME) $(DOCKER_REPO)/$(APP_NAME):$(VERSION)
+	docker tag $(APP_NAME):$(VERSION) $(DOCKER_REPO)/$(APP_NAME):$(VERSION)
 
 # HELPERS
 
