@@ -53,7 +53,7 @@ build-nc: ## Build the container without caching
 release: build-nc publish ## Make a release by building and publishing the `{version}` ans `latest` tagged containers to ECR
 
 # Docker publish
-publish: repo-login publish-latest publish-version publish-version-date ## Publish the `{version}` ans `latest` tagged containers to ECR
+publish: repo-login publish-latest publish-version ## Publish the `{version}` ans `latest` tagged containers to ECR
 
 publish-latest: tag-latest ## Publish the `latest` taged container to Docker.io
 	@echo 'publish latest to $(DOCKER_REPO)'
