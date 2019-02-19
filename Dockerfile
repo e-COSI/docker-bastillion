@@ -21,11 +21,10 @@ RUN apt-get update && apt-get -y install wget && \
     # create db directory for later permission update
     mkdir /opt/bastillion/jetty/bastillion/WEB-INF/classes/keydb && \
     # remove default config - will be written by dockerize on startup
-    rm /opt/bastillion/jetty/bastillion/WEB-INF/classes/BastillionConfig.properties
-    
+    rm /opt/bastillion/jetty/bastillion/WEB-INF/classes/BastillionConfig.properties && \
     # correct permission for running as non-root (f.e. on OpenShift)
-    #chgrp -R 0 /opt/bastillion && \
-    #chmod -R g=u /opt/bastillion
+    chgrp -R 0 /opt/bastillion && \
+    chmod -R g=u /opt/bastillion
 
 # persistent data of Bastillion is stored here
 VOLUME /opt/bastillion/jetty/bastillion/WEB-INF/classes/keydb
