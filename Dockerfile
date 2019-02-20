@@ -1,4 +1,4 @@
-FROM openjdk:8-slim
+FROM openjdk:9-slim
 
 LABEL maintainer="e-COSI <tech@e-cosi.com>"
 
@@ -29,9 +29,6 @@ VOLUME /opt/bastillion/jetty/bastillion/WEB-INF/classes/keydb
 # this is the home of Bastillion
 WORKDIR /opt/bastillion
 
-# dont run as root
-USER 1001
-
 # Bastillion listens on 8443 - HTTPS
 EXPOSE 8443
 
@@ -45,8 +42,12 @@ ADD files/jetty-start.ini /opt/bastillion/jetty/start.ini
 ADD files/startBastillion.sh /opt/bastillion/startBastillion.sh
 
 # correct permission for running as non-root (f.e. on OpenShift)
-RUN chgrp -R 0 /opt/bastillion && \
+RUN chmod 755 /opt/bastillion/startBastillion.sh && \
+    chgrp -R 0 /opt/bastillion && \
     chmod -R g=u /opt/bastillion
+
+# dont run as root
+USER 1001
 
 ENTRYPOINT ["/usr/local/bin/dockerize"]
 CMD ["-template", \
