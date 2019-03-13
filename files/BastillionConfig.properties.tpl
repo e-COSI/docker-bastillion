@@ -9,9 +9,9 @@ sshKeyType={{ default .Env.SSH_KEY_TYPE "rsa" }}
 #SSH key length for generated keys. 2048 => 'rsa','dsa'; 521 => 'ecdsa'
 sshKeyLength={{ default .Env.SSH_KEY_LENGTH "2048" }}
 #private ssh key, leave blank to generate key pair
-privateKey=
+privateKey={{ default .Env.SSH_PRIVATE_KEY "" }}
 #public ssh key, leave blank to generate key pair
-publicKey=
+publicKey={{ default .Env.SSH_PUBLIC_KEY "" }}
 #default passphrase, leave blank for key without passphrase
 defaultSSHPassphrase=${randomPassphrase}
 #enable audit
