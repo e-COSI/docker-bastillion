@@ -47,13 +47,13 @@ use256EncryptionKey=false
 
 #Database and connection pool settings
 #Database user
-dbUser=bastillion
+dbUser={{ default .Env.DB_USER "bastillion" }}
 #Database password
 dbPassword={{ .Env.DB_PASSWORD }}
 #Database JDBC driver
 dbDriver=org.h2.Driver
 #Connection URL to the DB
-dbConnectionURL=jdbc:h2:keydb/bastillion;CIPHER=AES;
+dbConnectionURL={{ default .Env.DB_CONNECTION_URL "jdbc:h2:keydb/bastillion;CIPHER=AES" }};
 #Max connections in the connection pool
 maxActive=25
 #When true, objects will be validated before being returned by the connection pool
