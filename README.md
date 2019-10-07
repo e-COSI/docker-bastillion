@@ -32,6 +32,7 @@ _Dockerize is used to generate a configuration file for the application_
    _Default: "2048"_
 
 * **private ssh key**
+   Provide **path** to private keyfile
 
    leave blank to generate key pair
 
@@ -41,6 +42,7 @@ _Dockerize is used to generate a configuration file for the application_
 
 
 * **public ssh key**
+   Provide **path** to public keyfile
 
    leave blank to generate key pair
 
@@ -85,7 +87,7 @@ _Dockerize is used to generate a configuration file for the application_
 
    'required', 'optional', or 'disabled'
 
-   `Env.ONE_TIME_PASSWORD` 
+   `ONE_TIME_PASSWORD` 
 
    _Default: "optional"_
 
