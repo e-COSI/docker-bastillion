@@ -1,6 +1,11 @@
 # docker-bastillion
 Docker image for Bastillion.io
 
+## Persistent storage
+_Currently not configurable using environment (need confirmation)_
+
+This means that any volume must be mounted to the following path in the container: `/opt/bastillion/jetty/bastillion/WEB-INF/classes/keydb`
+
 ## Environment
 _Dockerize is used to generate a configuration file for the application_
 
