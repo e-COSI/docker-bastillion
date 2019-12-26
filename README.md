@@ -1,5 +1,13 @@
 # docker-bastillion
-Docker image for Bastillion.io
+Docker image for [Bastillion.io](https://www.bastillion.io/)
+
+## What is Bastillion?
+
+Bastillion is an open-source web-based SSH console that centrally manages administrative access to systems.
+
+A bastion host for administrators with features that promote infrastructure security, including key management and auditing.
+
+For more information visit the [Bastillion website](https://www.bastillion.io/) or the [GitHub page](https://github.com/bastillion-io/Bastillion)
 
 ## Quick start
 
