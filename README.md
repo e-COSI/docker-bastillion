@@ -1,6 +1,22 @@
 # docker-bastillion
 Docker image for Bastillion.io
 
+## Quick start
+
+Create a directory where you want to store the Bastillion data: 
+
+`mkdir keydb/`
+
+Docker-Bastillion runs as user 1001. Not as root. You must change ownership of the keydb directory to 1001. Chown the directory to 1001: 
+
+`chown -R 1001:1001 keydb/`
+
+Run the docker image. The below example runs the image detached. Update the path to the keydb directory as required: 
+
+`
+sudo docker run -d -p 8080:8080 -p 8443:8443 -v /PATH/TO/keydb:/opt/bastillion/jetty/bastillion/WEB-INF/classes/keydb ecosi/bastillion
+`
+
 ## Persistent storage
 _Currently not configurable using environment (need confirmation)_
 
