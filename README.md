@@ -25,6 +25,13 @@ Run the docker image. The below example runs the image detached. Update the path
 sudo docker run -d -p 8080:8080 -p 8443:8443 -v /PATH/TO/keydb:/opt/bastillion/jetty/bastillion/WEB-INF/classes/keydb ecosi/bastillion
 `
 
+From a web browser, navigate to `https://<Instance IP>:8080` and login with:
+
+```
+username:admin
+password:changeme
+```
+
 ## Persistent storage
 _Currently not configurable using environment (need confirmation)_
 
