@@ -19,7 +19,7 @@ RUN apt-get update && apt-get -y install wget && \
     tar xzf bastillion-jetty-v${BASTILLION_FILENAME}.tar.gz -C /opt && \
     tar xzf dockerize-linux-amd64-v${DOCKERIZE_VERSION}.tar.gz -C /usr/local/bin && \
     mv /opt/Bastillion-jetty /opt/bastillion && \
-    mv bastillion-upgrade-${UPGRADE_JAR_VERSION}.jar /opt/bastillion/bastillion-upgrade-${UPGRADE_JAR_VERSION}.jar && \
+    mv bastillion-upgrade-${UPGRADE_JAR_VERSION}.jar /opt/bastillion/bastillion-upgrade.jar && \
     rm bastillion-jetty-v${BASTILLION_FILENAME}.tar.gz dockerize-linux-amd64-v${DOCKERIZE_VERSION}.tar.gz && \
     apt-get remove --purge -y wget && apt-get -y autoremove && rm -rf /var/lib/apt/lists/* && \
     # create db directory for later permission update
