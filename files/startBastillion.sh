@@ -18,6 +18,7 @@ fi
 
 # run the upgrade jar
 java -jar bastillion-upgrade.jar /opt/bastillion/jetty/bastillion/WEB-INF/classes/BastillionConfig.properties
+wait
 
 # change to jetty dir and start jetty
 cd jetty
