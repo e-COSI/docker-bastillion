@@ -16,6 +16,10 @@ if [ -f /opt/bastillion/jetty/bastillion/WEB-INF/classes/keydb/bastillion.jceks 
      /opt/bastillion/jetty/bastillion/WEB-INF/classes/bastillion.jceks
 fi
 
+# run the upgrade jar
+java -jar bastillion-upgrade.jar /opt/bastillion/jetty/bastillion/WEB-INF/classes/BastillionConfig.properties
+wait
+
 # change to jetty dir and start jetty
 cd jetty
 java -Xms1024m -Xmx1024m -jar start.jar
