@@ -1,0 +1,14 @@
+version: '3'
+services:
+  bastillion:
+    container_name: bastillion
+    restart: unless-stopped
+    build: .
+    ports:
+      - 8080:8080
+      - 8443:8443
+    volumes:
+      - ./keydb:/opt/bastillion/jetty/bastillion/WEB-INF/classes/keydb
+    environment:
+      RESET_APPLICATION_SSH_KEY: 'false'
+      SSH_KEY_TYPE: rsa
