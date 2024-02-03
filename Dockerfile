@@ -1,4 +1,4 @@
-FROM openjdk:9-slim
+FROM openjdk:11.0.11-9-slim
 
 LABEL maintainer="e-COSI <tech@e-cosi.com>"
 
